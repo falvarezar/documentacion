@@ -15,7 +15,7 @@ Este paso incluye realizar la solicitud correspondiente para ser habilitado como
 En cuanto a los datos que se requiere para el ambiente de pruebas el contribuyente deberá utilizar los siguientes datos como información del emisor: 
 
 ::::info INFO
-- Timbrado: (reemplazar por el RUC sin dígito verificador) Ejemplo: `80011111`
+- Timbrado: (reemplazar por el RUC sin dígito verificador) Ejemplo: `80000000`
 
 :::note NOTA
 Si el RUC es de persona física, completar con "0" a la izquierda para llegar a los 8 dígitos `ej. 04111111`

@@ -180,9 +180,10 @@ C:
 ## **Tabs**
 
 <Tabs className="unique-tabs">
-  <TabItem value="Apple">This is an apple 🍎</TabItem>
-  <TabItem value="Orange">This is an orange 🍊</TabItem>
-  <TabItem value="Banana">This is a banana 🍌</TabItem>
+  <TabItem value="Postman">This is an apple 🍎</TabItem>
+  <TabItem value="Shell">This is an orange 🍊</TabItem>
+  <TabItem value="Javascript">This is a banana 🍌</TabItem>
+  <TabItem value="VFP">This is a banana 🍌</TabItem>
 </Tabs>
 
 import styles from './styles.module.css';

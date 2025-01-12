@@ -222,15 +222,20 @@ Es necesario contar con una estructura que permita almacenar los registros de lo
         <td style={{ textAlign: "justify" }}>campo para establecer el estado del documento segun la respuesta del SIFEN a: PENDIENTE, APRROBADO, RECHAZADO, INUTILIZDO, CANCELADO, ANULADO</td>
       </tr> 
       <tr>
-        <td style={{ whiteSpace: 'nowrap' }}>id sifen</td>
+        <td style={{ whiteSpace: 'nowrap' }}>identificador</td>
         <td style={{ whiteSpace: 'nowrap' }}>int</td>
         <td style={{ textAlign: "justify" }}>Número secuencial autoincremental único que identifica cada documento emitido. Corresponde al ID autogenerado por el emisor, el cual puede extraerse de una tabla que almacene el identificador asociado a cada tipo de operación, como emisión de documentos o envío de eventos.</td>
       </tr>
       <tr>
         <td style={{ whiteSpace: 'nowrap' }}>codigo aleatorio</td>
         <td style={{ whiteSpace: 'nowrap' }}>numeric</td>
-        <td style={{ textAlign: "justify" }}>Código generado por el emisor de manera aleatoria, este código estara concatenado con el CDC para asegurar la confidencialidad del documento</td>
+        <td style={{ textAlign: "justify" }}>Código de 9 digitos generado por el emisor de manera aleatoria, este código estara concatenado con el CDC para asegurar la confidencialidad del documento ej. 123456789</td>
       </tr>
+      <tr>
+        <td style={{ whiteSpace: 'nowrap' }}>CA</td>
+        <td style={{ whiteSpace: 'nowrap' }}>string</td>
+        <td style={{ textAlign: "justify" }}>código de 6 dígitos generado aleatoriamente por el emisor y que esta sea único por cliente. Este código es especialmente útil en casos donde se utiliza una impresora de tickets matricial, ya que permite incluirlo en el ticket provisorio impreso. El código CA facilita que el cliente pueda descargar el KuDE desde una página web indicada en el mismo ticket ingresando el ruc/ci del cliente y el código CA: ej. SKR074 para la descarga.</td>
+      </tr>      
       <tr>
         <td style={{ whiteSpace: 'nowrap' }}>numero lote</td>
         <td style={{ whiteSpace: 'nowrap' }}>string</td>
