@@ -30,17 +30,22 @@
 }
 
 .unique-tabs .tabs__item {
-  background-color: #ffffff;
-  border: 1px solid #ffffff;
+  /*background-color: #eef9fd;*/
+  /*border: 1px solid #eef9fd;*/
   color: #000000;
   padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
 }
 
+.theme-dark .unique-tabs .tabs__item {
+  color: #ffffff; /* Cambia el texto a blanco para mejor contraste */
+}
+
 .unique-tabs .tabs__item--active {
   background-color: #18816a; /* Verde */
-  color: white;
+  color: #ffffff;
   border-color: #18816a;
   font-weight: bold;
 }
+

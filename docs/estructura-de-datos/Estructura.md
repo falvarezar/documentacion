@@ -197,7 +197,7 @@ En esta sección se detalla la estructura de datos requerida para la integració
           <input type="checkbox" disabled />
         </td>
         <td style={{ whiteSpace: 'nowrap' }}>Una vez que el CDC ha sido <br /> generado y transmitido al <br /> SIFEN, cualquier rechazo que <br /> requiera modificar la estructura <br /> del CDC hará que el documento <br /> no pueda ser reenviado. <br /> En este caso, será necesario <br /> proceder con la inutilización <br /> del documento. <br /> (si el cdc es null la API lo genera)</td>   
-      </tr>
+      </tr>      
     <tr>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center'  }}>envio_pend</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center'  }}>envio_pend</td>
@@ -207,6 +207,16 @@ En esta sección se detalla la estructura de datos requerida para la integració
           <input type="checkbox" checked />
         </td>
         <td style={{ whiteSpace: 'nowrap' }}>valor 1 establece que el kuDE <br /> sera enviado por mail al <br /> aprobarse el documento desde <br /> la API de DTEpy</td>
+      </tr>
+    <tr>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center'  }}></td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center'  }}>mail</td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center'  }}>booleano</td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>todos</td>
+        <td style={{ textAlign: 'center' }}>
+          <input type="checkbox" checked />
+        </td>
+        <td style={{ whiteSpace: 'nowrap' }}>indica que el mail fue enviado <br /> al cliente</td>
       </tr>
     <tr>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center'  }}>tipoDocumento</td>
@@ -229,8 +239,8 @@ En esta sección se detalla la estructura de datos requerida para la integració
         <td style={{ whiteSpace: 'nowrap' }}>Debe ser un número positivo <br /> de 9 dígitos aleatorio</td>
       </tr>
     <tr>
-        <td style={{ whiteSpace: 'nowrap', textAlign: 'center'  }}>ca</td>
-        <td style={{ whiteSpace: 'nowrap', textAlign: 'center'  }}>ca</td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center'  }}>pin</td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center'  }}>pin</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center'  }}>string</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>todos</td>
         <td style={{ textAlign: 'center' }}>
@@ -508,17 +518,15 @@ En esta sección se detalla la estructura de datos requerida para la integració
         </td>
         <td style={{ whiteSpace: 'nowrap' }}>campo para relacionar con datos <br /> de items, doc. asociado, <br /> forma de cobro</td>
       </tr>
-    <tr>
-        <td style={{ whiteSpace: 'nowrap', textAlign: 'center'  }}></td>
-        <td style={{ whiteSpace: 'nowrap', textAlign: 'center'  }}>iddevolucion</td>
-        <td style={{ whiteSpace: 'nowrap', textAlign: 'center'  }}>string</td>
-        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>NC</td>
-        <td style={{ textAlign: 'center' }}>
-          <input type="checkbox" disabled />
-        </td>
-        <td style={{ whiteSpace: 'nowrap' }}>campo para relacionar con datos <br /> de ítems devueltos</td>
-      </tr>                              
     </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="6" style={{ textAlign: 'center', padding: '10px', fontStyle: 'italic', fontSize: "18px" }}>
+          Nota: Si utiliza el método de conexión VFP el nombre del cursor de retorno debe llamarse CABECERA. <br />
+          Nota: Al usuario se envía el parámetro FECHA para filtrar los datos. 
+        </td>
+      </tr>
+    </tfoot>    
   </table>
 </div>
 
@@ -696,6 +704,14 @@ En esta sección se detalla la estructura de datos requerida para la integració
         <td style={{ whiteSpace: 'nowrap' }}>agregar valor si se informa la dirección <br /> y tipoOperacion es diferente a B2F</td>
       </tr>      
     </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="6" style={{ textAlign: 'center', padding: '10px', fontStyle: 'italic', fontSize: "18px" }}>
+          Nota: Nombre de cursor retorno de vfp: SQCLIENTE. <br />
+          Nota: Al usuario se envía el parámetro IDCLIENTE. 
+        </td>
+      </tr>
+    </tfoot>      
   </table>
 </div>
 
@@ -763,6 +779,14 @@ En esta sección se detalla la estructura de datos requerida para la integració
         <td style={{ whiteSpace: 'nowrap' }}></td>
       </tr>
     </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="6" style={{ textAlign: 'center', padding: '10px', fontStyle: 'italic', fontSize: "18px" }}>
+          Nota: Nombre de cursor retorno de vfp: SQUSUARIO. <br />
+          Nota: Al usuario se envía el parámetro IDUSUARIO. 
+        </td>
+      </tr>
+    </tfoot>      
   </table>
 </div>
 
@@ -840,6 +864,14 @@ En esta sección se detalla la estructura de datos requerida para la integració
         <td style={{ whiteSpace: 'nowrap' }}>json: ej. <br /> 2025-01-01 <br /> <br /> integrador: ej. <br /> 01/01/2025</td>
       </tr>      
     </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="6" style={{ textAlign: 'center', padding: '10px', fontStyle: 'italic', fontSize: "18px" }}>
+          Nota: Nombre de cursor retorno de vfp: SQDNCP. <br />
+          Nota: Al usuario se envía el parámetro IDMOVIMIENTO. 
+        </td>
+      </tr>
+    </tfoot>      
   </table>
 </div>
 
@@ -857,7 +889,7 @@ En esta sección se detalla la estructura de datos requerida para la integració
     </thead>
     <thead>
       <tr>
-        <th style={{ whiteSpace: 'nowrap' }}>Json.obligaciones</th>
+        <th style={{ whiteSpace: 'nowrap' }}>Json.obligaciones[]</th>
         <th style={{ whiteSpace: 'nowrap' }}>Integrador</th>
         <th style={{ whiteSpace: 'nowrap' }}>Tipo</th>
         <th style={{ whiteSpace: 'nowrap' }}>Docum</th>
@@ -887,6 +919,14 @@ En esta sección se detalla la estructura de datos requerida para la integració
         <td style={{ whiteSpace: 'nowrap' }}>ej. Impuesto al Valor Agregado</td>
       </tr>
     </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="6" style={{ textAlign: 'center', padding: '10px', fontStyle: 'italic', fontSize: "18px" }}>
+          Nota: Nombre de cursor retorno de vfp: SQOBLIGACIONES. <br />
+          Nota: No se envian parametros, la consulta debe traer todos los registros.
+        </td>
+      </tr>
+    </tfoot>      
   </table>
 </div>
 
@@ -904,7 +944,7 @@ En esta sección se detalla la estructura de datos requerida para la integració
     </thead>
     <thead>
       <tr>
-        <th style={{ whiteSpace: 'nowrap' }}>Json.items</th>
+        <th style={{ whiteSpace: 'nowrap' }}>Json.items[]</th>
         <th style={{ whiteSpace: 'nowrap' }}>Integrador</th>
         <th style={{ whiteSpace: 'nowrap' }}>Tipo</th>
         <th style={{ whiteSpace: 'nowrap' }}>Docum</th>
@@ -1031,7 +1071,7 @@ En esta sección se detalla la estructura de datos requerida para la integració
         <td style={{ textAlign: 'center' }}>
           <input type="checkbox" checked />
         </td>
-        <td style={{ whiteSpace: 'nowrap' }}>ej. 100, 50, 30, 0</td>
+        <td style={{ whiteSpace: 'nowrap' }}>proporción del iva que afecta a <br /> un ítem gravado ej. 100, 50, 30, 0</td>
       </tr>      
       <tr>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>observacion</td>
@@ -1044,6 +1084,14 @@ En esta sección se detalla la estructura de datos requerida para la integració
         <td style={{ whiteSpace: 'nowrap' }}></td>
       </tr>
     </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="6" style={{ textAlign: 'center', padding: '10px', fontStyle: 'italic', fontSize: "18px" }}>
+          Nota: Nombre de cursor retorno de vfp: SQITEMS. <br />
+          Nota: Al usuario se envía el parámetro IDMOVIMIENTO. 
+        </td>
+      </tr>
+    </tfoot>      
   </table>
 </div>
 
@@ -1071,7 +1119,7 @@ En esta sección se detalla la estructura de datos requerida para la integració
     </thead>
     <tbody>
       <tr>
-        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>entregas.tipo</td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>entregas[].tipo</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>tipo</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>int</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>FE, AF</td>
@@ -1081,17 +1129,17 @@ En esta sección se detalla la estructura de datos requerida para la integració
         <td style={{ whiteSpace: 'nowrap' }}>1 = Efectivo <br /> 2 = Cheque <br /> 3 = Tarjeta de crédito <br /> 4 = Tarjeta de débito <br /> 5 = Transferencia <br /> 6 = Giro <br /> 7 = Billetera electrónica <br /> 8 = Tarjeta empresarial <br /> 9 = Vale <br /> 10 = Retención <br /> 11 = Pago por anticipo <br /> 12 = Valor fiscal <br /> 13 = Valor comercial <br /> 14 = Compensación <br /> 15 = Permuta <br /> 16 = Pago bancario <br /> 17=  Pago Móvil <br /> 18 = Donación <br /> 19 = Promoción <br /> 20 = Consumo Interno <br /> 21 = Pago Electrónico <br /> 99 = Otro</td>
       </tr>
       <tr>
-        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>entregas.tipo.descripcion</td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>entregas[].tipo.descripcion</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>descripcion</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>string</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>FE, AF</td>
         <td style={{ textAlign: 'center' }}>
           <input type="checkbox" disabled />
         </td>
-        <td style={{ whiteSpace: 'nowrap' }}>informar si entregas.tipo = 99</td>
+        <td style={{ whiteSpace: 'nowrap' }}>informar si entregas[].tipo = 99</td>
       </tr>
       <tr>
-        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>entregas.moneda</td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>entregas[].moneda</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>moneda</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>string</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>FE, AF</td>
@@ -1101,7 +1149,7 @@ En esta sección se detalla la estructura de datos requerida para la integració
         <td style={{ whiteSpace: 'nowrap' }}>PYG, ARS, USD, BRL, EUR</td>
       </tr> 
       <tr>
-        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>entregas.cambio</td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>entregas[].cambio</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>cambio</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>numeric</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>FE, AF</td>
@@ -1111,7 +1159,7 @@ En esta sección se detalla la estructura de datos requerida para la integració
         <td style={{ whiteSpace: 'nowrap' }}>informar si moneda <br /> es diferente a PYG</td>
       </tr>
       <tr>
-        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>entregas.monto</td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>entregas[].monto</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>monto</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>numeric</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>FE, AF</td>
@@ -1121,66 +1169,74 @@ En esta sección se detalla la estructura de datos requerida para la integració
         <td style={{ whiteSpace: 'nowrap' }}></td>
       </tr>
       <tr>
-        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>entregas.infoCheque.banco</td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>entregas[].infoCheque.banco</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>banco</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>string</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>FE, AF</td>
         <td style={{ textAlign: 'center' }}>
           <input type="checkbox" disabled />
         </td>
-        <td style={{ whiteSpace: 'nowrap' }}>informar si entregas.tipo = 2</td>
+        <td style={{ whiteSpace: 'nowrap' }}>informar si entregas[].tipo = 2</td>
       </tr>
       <tr>
-        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>entregas.infoCheque.numeroCheque</td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>entregas[].infoCheque.numeroCheque</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>numerocheque</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>string</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>FE, AF</td>
         <td style={{ textAlign: 'center' }}>
           <input type="checkbox" disabled />
         </td>
-        <td style={{ whiteSpace: 'nowrap' }}>informar si entregas.tipo = 2</td>
+        <td style={{ whiteSpace: 'nowrap' }}>informar si entregas[].tipo = 2</td>
       </tr>
       <tr>
-        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>entregas.infoTarjeta.tipo</td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>entregas[].infoTarjeta.tipo</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>tipotarjeta</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>int</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>FE, AF</td>
         <td style={{ textAlign: 'center' }}>
           <input type="checkbox" disabled />
         </td>
-        <td style={{ whiteSpace: 'nowrap' }}>informar si entregas.tipo = 3 o 4 <br /> 1 = Visa <br /> 2 = Mastercard <br /> 3 = American Express <br /> 4 = Maestro <br /> 5 = Panal <br /> 6 = Cabal <br /> 99 = Otro</td>
+        <td style={{ whiteSpace: 'nowrap' }}>informar si entregas[].tipo = 3 o 4 <br /> 1 = Visa <br /> 2 = Mastercard <br /> 3 = American Express <br /> 4 = Maestro <br /> 5 = Panal <br /> 6 = Cabal <br /> 99 = Otro</td>
       </tr>
       <tr>
-        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>entregas.infoTarjeta.tipodescripcion</td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>entregas[].infoTarjeta.tipodescripcion</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>tipodescripcion</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>string</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>FE, AF</td>
         <td style={{ textAlign: 'center' }}>
           <input type="checkbox" disabled />
         </td>
-        <td style={{ whiteSpace: 'nowrap' }}>informar si <br /> entregas.infoTarjeta.tipo = 99 </td>
+        <td style={{ whiteSpace: 'nowrap' }}>informar si <br /> entregas[].infoTarjeta.tipo = 99 </td>
       </tr>
       <tr>
-        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>entregas.infoTarjeta.numero</td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>entregas[].infoTarjeta.numero</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>numero</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>string</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>FE, AF</td>
         <td style={{ textAlign: 'center' }}>
           <input type="checkbox" disabled />
         </td>
-        <td style={{ whiteSpace: 'nowrap' }}>informar si entregas.tipo = 3 o 4</td>
+        <td style={{ whiteSpace: 'nowrap' }}>informar si entregas[].tipo = 3 o 4</td>
       </tr>
       <tr>
-        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>entregas.infoTarjeta.medioPago</td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>entregas[].infoTarjeta.medioPago</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>mediopago</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>int</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>FE, AF</td>
         <td style={{ textAlign: 'center' }}>
           <input type="checkbox" disabled />
         </td>
-        <td style={{ whiteSpace: 'nowrap' }}>informar si entregas.tipo = 3 o 4</td>
+        <td style={{ whiteSpace: 'nowrap' }}>informar si entregas[].tipo = 3 o 4 <br /> 1 = POS <br /> 2 = Pago Electrónico <br /> 9 = Otro</td>
       </tr>
     </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="6" style={{ textAlign: 'center', padding: '10px', fontStyle: 'italic', fontSize: "18px" }}>
+          Nota: Nombre de cursor retorno de vfp: SQFORMACOBRO. <br />
+          Nota: Al usuario se envía el parámetro IDMOVIMIENTO. 
+        </td>
+      </tr>
+    </tfoot>      
   </table>
 </div>
 
@@ -1208,7 +1264,7 @@ En esta sección se detalla la estructura de datos requerida para la integració
     </thead>
     <tbody>
       <tr>
-        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>infoCuotas.moneda</td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>infoCuotas[].moneda</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>moneda</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>string</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>FE, AF</td>
@@ -1218,9 +1274,9 @@ En esta sección se detalla la estructura de datos requerida para la integració
         <td style={{ whiteSpace: 'nowrap' }}></td>
       </tr>
       <tr>
-        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>infoCuotas.monto</td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>infoCuotas[].monto</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>monto</td>
-        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>string</td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>numeric</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>FE, AF</td>
         <td style={{ textAlign: 'center' }}>
           <input type="checkbox" checked />
@@ -1228,7 +1284,7 @@ En esta sección se detalla la estructura de datos requerida para la integració
         <td style={{ whiteSpace: 'nowrap' }}></td>
       </tr> 
       <tr>
-        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>infoCuotas.vencimiento</td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>infoCuotas[].vencimiento</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>vencimiento</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>date</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>FE, AF</td>
@@ -1238,6 +1294,14 @@ En esta sección se detalla la estructura de datos requerida para la integració
         <td style={{ whiteSpace: 'nowrap' }}></td>
       </tr>
     </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="6" style={{ textAlign: 'center', padding: '10px', fontStyle: 'italic', fontSize: "18px" }}>
+          Nota: Nombre de cursor retorno de vfp: SQCUOTAS. <br />
+          Nota: Al usuario se envía el parámetro IDMOVIMIENTO. 
+        </td>
+      </tr>
+    </tfoot>      
   </table>
 </div>
 
@@ -1255,7 +1319,7 @@ En esta sección se detalla la estructura de datos requerida para la integració
     </thead>
     <thead>
       <tr>
-        <th style={{ whiteSpace: 'nowrap' }}>Json.documentoAsociado</th>
+        <th style={{ whiteSpace: 'nowrap' }}>Json.documentoAsociado[]</th>
         <th style={{ whiteSpace: 'nowrap' }}>Integrador</th>
         <th style={{ whiteSpace: 'nowrap' }}>Tipo</th>
         <th style={{ whiteSpace: 'nowrap' }}>Docum</th>
@@ -1380,11 +1444,19 @@ En esta sección se detalla la estructura de datos requerida para la integració
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>string</td>
         <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>todos</td>
         <td style={{ textAlign: 'center' }}>
-          <input type="checkbox" disabled />
+          <input type="checkbox" checked />
         </td>
         <td style={{ whiteSpace: 'nowrap' }}></td>
       </tr>      
     </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="6" style={{ textAlign: 'center', padding: '10px', fontStyle: 'italic', fontSize: "18px" }}>
+          Nota: Nombre de cursor retorno de vfp: SQDOCASO. <br />
+          Nota: Al usuario se envía el parámetro IDMOVIMIENTO. 
+        </td>
+      </tr>
+    </tfoot>      
   </table>
 </div>
 
@@ -1542,6 +1614,14 @@ En esta sección se detalla la estructura de datos requerida para la integració
         <td style={{ whiteSpace: 'nowrap' }}></td>
       </tr>
     </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="6" style={{ textAlign: 'center', padding: '10px', fontStyle: 'italic', fontSize: "18px" }}>
+          Nota: Nombre de cursor retorno de vfp: SQAUTOFACTURA. <br />
+          Nota: Al usuario se envía el parámetro IDVENDEDOR. 
+        </td>
+      </tr>
+    </tfoot>      
   </table>
 </div>
 
@@ -2003,6 +2083,109 @@ En esta sección se detalla la estructura de datos requerida para la integració
         <td style={{ whiteSpace: 'nowrap' }}>seria el idmovimiento <br /> del documento asociado a <br /> la remision ej (una factura)</td>
       </tr>        
     </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="6" style={{ textAlign: 'center', padding: '10px', fontStyle: 'italic', fontSize: "18px" }}>
+          Nota: Nombre de cursor retorno de vfp: SQREMISION. <br />
+          Nota: Al usuario se envía el parámetro IDMOVIMIENTO. 
+        </td>
+      </tr>
+    </tfoot>      
+  </table>
+</div>
+
+---
+---
+
+<div style={{ overflowX: 'auto' }}>
+  <table style={{ tableLayout: 'fixed', borderCollapse: 'collapse', width: '100%' }}>
+    <thead>
+      <tr>
+        <th style={{ textAlign: 'center', padding: '10px', fontSize: '1.0em' }} colspan="7">
+          CONSULTA DE ID
+        </th>
+      </tr>
+    </thead>
+    <thead>
+      <tr>
+        <th style={{ whiteSpace: 'nowrap' }}>Json</th>
+        <th style={{ whiteSpace: 'nowrap' }}>Integrador</th>
+        <th style={{ whiteSpace: 'nowrap' }}>Tipo</th>
+        <th style={{ whiteSpace: 'nowrap' }}>Docum</th>
+        <th style={{ whiteSpace: 'nowrap' }}>Oblig</th>
+        <th style={{ whiteSpace: 'nowrap' }}>Observación</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}></td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>identificador</td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>int</td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>todos</td>
+        <td style={{ textAlign: 'center' }}>
+          <input type="checkbox" checked />
+        </td>
+        <td style={{ whiteSpace: 'nowrap' }}></td>
+      </tr>
+      <tr>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}></td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>idlote</td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>int</td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>todos</td>
+        <td style={{ textAlign: 'center' }}>
+          <input type="checkbox" checked />
+        </td>
+        <td style={{ whiteSpace: 'nowrap' }}></td>
+      </tr>
+      <tr>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}></td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>idcancelacion</td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>int</td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>todos</td>
+        <td style={{ textAlign: 'center' }}>
+          <input type="checkbox" checked />
+        </td>
+        <td style={{ whiteSpace: 'nowrap' }}></td>
+      </tr> 
+      <tr>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}></td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>idinutilizacion</td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>int</td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>todos</td>
+        <td style={{ textAlign: 'center' }}>
+          <input type="checkbox" checked />
+        </td>
+        <td style={{ whiteSpace: 'nowrap' }}></td>
+      </tr>
+      <tr>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}></td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>idnominacion</td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>int</td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>todos</td>
+        <td style={{ textAlign: 'center' }}>
+          <input type="checkbox" checked />
+        </td>
+        <td style={{ whiteSpace: 'nowrap' }}></td>
+      </tr>
+      <tr>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}></td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>id_datostrans</td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>int</td>
+        <td style={{ whiteSpace: 'nowrap', textAlign: 'center' }}>todos</td>
+        <td style={{ textAlign: 'center' }}>
+          <input type="checkbox" checked />
+        </td>
+        <td style={{ whiteSpace: 'nowrap' }}></td>
+      </tr>            
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="6" style={{ textAlign: 'center', padding: '10px', fontStyle: 'italic', fontSize: "18px" }}>
+          Nota: Nombre de cursor retorno de vfp: SQIDCONSULTA. <br />
+          Nota: No se envian parametros, la consulta debe traer tal cual.
+        </td>
+      </tr>
+    </tfoot>      
   </table>
 </div>
 

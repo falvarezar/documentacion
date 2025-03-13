@@ -84,8 +84,10 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()}, Globe Informática.`,
     },
     prism: {
-      theme: prismThemes.github,
+      //theme: prismThemes.github,
+      theme: prismThemes.dracula,
       darkTheme: prismThemes.dracula,
+      additionalLanguages: ['bash'],
     },
   } satisfies Preset.ThemeConfig,
 };

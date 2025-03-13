@@ -232,7 +232,7 @@ Es necesario contar con una estructura que permita almacenar los registros de lo
         <td style={{ textAlign: "justify" }}>Código de 9 digitos generado por el emisor de manera aleatoria, este código estara concatenado con el CDC para asegurar la confidencialidad del documento ej. 123456789</td>
       </tr>
       <tr>
-        <td style={{ whiteSpace: 'nowrap' }}>CA</td>
+        <td style={{ whiteSpace: 'nowrap' }}>pin</td>
         <td style={{ whiteSpace: 'nowrap' }}>string</td>
         <td style={{ textAlign: "justify" }}>código de 6 dígitos generado aleatoriamente por el emisor y que esta sea único por cliente. Este código es especialmente útil en casos donde se utiliza una impresora de tickets matricial, ya que permite incluirlo en el ticket provisorio impreso. El código CA facilita que el cliente pueda descargar el KuDE desde una página web indicada en el mismo ticket ingresando el ruc/ci del cliente y el código CA: ej. SKR074 para la descarga.</td>
       </tr>      
@@ -256,6 +256,11 @@ Es necesario contar con una estructura que permita almacenar los registros de lo
         <td style={{ whiteSpace: 'nowrap' }}>int</td>
         <td style={{ textAlign: "justify" }}>1 = Operación presencial <br /> 2 = Operación electrónica <br /> 3 = Operación telemarketing <br /> 4 = Venta a domicilio <br /> 5 = Operación bancaria <br /> 6 = Operación cíclica <br /> 9 = Otro</td>
       </tr>  
+      <tr>
+        <td style={{ whiteSpace: 'nowrap' }}>tipo emision</td>
+        <td style={{ whiteSpace: 'nowrap' }}>int</td>
+        <td style={{ textAlign: "justify" }}>1 = Normal <br />2 = Contingencia</td>
+      </tr>
       <tr>
         <td style={{ whiteSpace: 'nowrap' }}>motivo nota</td>
         <td style={{ whiteSpace: 'nowrap' }}>int</td>
